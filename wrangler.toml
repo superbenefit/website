@@ -1,0 +1,25 @@
+name = "sb-website"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "sb-website-production"
+
+[env.staging]
+name = "sb-website-staging"
+
+# Pages configuration for static sites
+pages_build_output_dir = "dist"
+
+# Custom domains will be configured through Cloudflare dashboard
+# routes = [
+#   { pattern = "superbenefit.org/*", zone_name = "superbenefit.org" }
+# ]
+
+# Environment variables (set via CLI or dashboard)
+# [vars]
+# ENVIRONMENT = "production"
+
+# Secrets (set via CLI: wrangler secret put SECRET_NAME)
+# [vars]
+# API_KEY = "your-api-key"
