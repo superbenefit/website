@@ -1,0 +1,42 @@
+{
+  "title": "Example External Content Structure",
+  "description": "This shows the structure of content fetched from external repositories",
+  "sources": {
+    "knowledge-garden": {
+      "repository": "superbenefit/knowledge-garden",
+      "branch": "main",
+      "directory": "content",
+      "filter": {
+        "publish": true
+      },
+      "example_entry": {
+        "title": "Understanding DAOs",
+        "description": "A comprehensive guide to decentralized autonomous organizations",
+        "tags": ["dao", "governance", "web3"],
+        "publish": true,
+        "date": "2024-01-15",
+        "author": "Community",
+        "url": "https://knowledge.superbenefit.org/understanding-daos"
+      }
+    },
+    "governance": {
+      "repository": "superbenefit/governance",
+      "branch": "main",
+      "directory": "policies",
+      "example_entry": {
+        "title": "Voting Policy",
+        "description": "How decisions are made in SuperBenefit DAO",
+        "tags": ["governance", "policy"],
+        "lastUpdated": "2024-01-20",
+        "url": "https://github.com/superbenefit/governance/blob/main/policies/voting.md"
+      }
+    }
+  },
+  "aggregation_rules": {
+    "fetch_at": "build_time",
+    "cache_duration": "1_hour_development",
+    "fallback": "use_cached_on_error",
+    "limit": 10,
+    "sort": "date_desc"
+  }
+}

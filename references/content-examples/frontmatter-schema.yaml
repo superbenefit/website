@@ -1,0 +1,83 @@
+# Frontmatter Schema
+
+## Required Fields
+
+```yaml
+---
+title: string           # Page title
+description: string     # SEO meta description
+---
+```
+
+## Optional Fields
+
+```yaml
+---
+# Publishing
+draft: boolean         # Default: false
+publish: boolean       # Default: true
+
+# Organization
+tags: string[]         # Array of tags
+order: number         # Sort order for collections
+section: string       # Page section/category
+
+# SEO
+image: string         # OG image path
+canonical: string     # Canonical URL
+
+# Layout
+layout: string        # Custom layout component
+hero: boolean        # Is hero content?
+
+# External Content
+source: string       # Source repository
+sourceUrl: string    # Link to original
+---
+```
+
+## Examples
+
+### Basic Page
+```yaml
+---
+title: "About SuperBenefit"
+description: "Learn about our mission and values"
+---
+```
+
+### Blog Post
+```yaml
+---
+title: "Introducing Our New Governance Model"
+description: "How we're evolving our decision-making processes"
+tags: ["governance", "announcement"]
+publish: true
+---
+```
+
+### External Content
+```yaml
+---
+title: "Governance Policy Update"
+description: "Latest changes to our governance framework"
+source: "governance"
+sourceUrl: "https://github.com/superbenefit/governance/blob/main/policies/update.md"
+tags: ["governance", "policy"]
+---
+```
+
+## Validation
+
+The Content Layer API will validate frontmatter against defined schemas:
+
+```typescript
+// Schema definition example
+const schema = z.object({
+  title: z.string(),
+  description: z.string(),
+  draft: z.boolean().optional().default(false),
+  publish: z.boolean().optional().default(true),
+  tags: z.array(z.string()).optional(),
+});
+```
