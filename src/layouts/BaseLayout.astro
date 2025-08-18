@@ -1,0 +1,68 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const {
+  title = "SuperBenefit",
+  description = "A decentralized autonomous organization focused on creating positive impact through innovative blockchain solutions.",
+  image = "/og-image.jpg",
+  canonical = Astro.url.href,
+} = Astro.props;
+
+const siteTitle = title === "SuperBenefit" ? title : `${title} | SuperBenefit`;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
+    <title>{siteTitle}</title>
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={siteTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts - SuperBenefit Typography -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" 
+      rel="stylesheet" 
+    />
+    
+    <!-- Import global styles with SuperBenefit design tokens -->
+    <style>
+      /* Design tokens are now applied via @theme directive in global.css */
+    </style>
+  </head>
+  <body class="min-h-screen bg-sb-surface text-sb-dark font-sb-body antialiased">
+    <div id="app" class="flex min-h-screen flex-col">
+      <main class="flex-1">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
