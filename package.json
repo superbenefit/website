@@ -6,9 +6,31 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "check:watch": "astro check --watch",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "deploy:staging": "npm run build && wrangler pages deploy dist --env staging",
+    "deploy:production": "npm run build && wrangler pages deploy dist --env production",
+    "deploy": "npm run deploy:staging"
   },
   "dependencies": {
-    "astro": "^5.13.2"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/react": "^4.3.0",
+    "@biomejs/biome": "^2.2.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "astro": "^5.13.2",
+    "astro-github-file-loader": "^1.1.0",
+    "nanostores": "^1.0.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.30.0"
   }
 }
