@@ -414,10 +414,15 @@ Always use the appropriate agent for each task:
 ### CRITICAL: Documentation Research Requirement
 
 **MANDATORY FOR ALL AGENTS**: Before implementing ANY Astro feature, configuration, or integration:
-1. **MUST use astro-docs-specialist first** to research current documentation
+1. **MUST use astro-docs-specialist first** to research current Astro documentation
 2. **NO EXCEPTIONS**: Never implement based on assumptions or outdated knowledge
-3. **Verify syntax and APIs**: Always confirm current Astro patterns and best practices
-4. **Reference specific documentation**: Include source URLs in implementation decisions
+3. **NEVER use Astro docs MCP directly**: Only astro-docs-specialist has sitemap context for proper Astro documentation queries
+4. **Verify syntax and APIs**: Always confirm current Astro patterns and best practices through astro-docs-specialist
+5. **Reference specific documentation**: Include source URLs provided by astro-docs-specialist in implementation decisions
+
+**CRITICAL**: Only astro-docs-specialist should use `mcp__astro-docs__search_astro_docs` - all other agents must request Astro documentation through astro-docs-specialist
+
+**NOTE**: This restriction applies ONLY to Astro documentation MCP servers. Agents may use other MCP servers as appropriate for their roles.
 
 **Workflow**: `astro-docs-specialist` → (research complete) → implementation agent
 

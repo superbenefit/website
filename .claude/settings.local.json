@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:superbenefit.org)",
+      "WebFetch(domain:knowledge.superbenefit.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.astro.build)",
+      "Bash(npx biome:*)",
+      "Bash(test:*)",
+      "Bash(env)",
+      "WebSearch",
+      "Bash(compgen -c)",
+      "WebFetch(domain:developers.cloudflare.com)",
+      "mcp__astro-docs__search_astro_docs",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint)",
+      "Bash(npm audit:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(npm run check:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx @biomejs/biome check:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(cat:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "F:\\"
+    ]
+  }
+}
