@@ -157,6 +157,59 @@ npm run astro        # Run Astro CLI commands
 npm install          # Install dependencies
 ```
 
+## Process Management Guidelines
+
+### CRITICAL: Background Process Management
+
+**BEFORE starting ANY background process:**
+
+1. **Check existing processes**: Use `ps aux | grep -E "(npm|astro|node)" | grep -v grep` to see running processes
+2. **Kill duplicate Node processes**: Use `pkill -f "npm run"` to kill existing npm/node processes before starting new ones
+3. **Never kill Claude Code shells**: Only kill the Node processes inside them, not the bash shells themselves
+
+### Background Process Rules
+
+**ONLY ONE active process per type:**
+- ✅ **ONE** `npm run dev` server (development)
+- ✅ **ONE** `npm run preview` server (production preview)  
+- ❌ **NEVER** multiple development servers
+- ❌ **NEVER** orphaned background processes
+
+**Process Lifecycle Management:**
+```bash
+# 1. Check before starting
+ps aux | grep -E "(npm|astro|node)" | grep -v grep
+
+# 2. Kill existing Node processes (Windows compatible)
+taskkill /f /im node.exe 2>/dev/null || true
+
+# 3. Start new process with preferred port
+npm run dev -- --port 4321
+
+# 4. Clean up when done
+taskkill /f /im node.exe 2>/dev/null || true
+```
+
+**Critical Process Rules:**
+- **Always kill Node processes**: Before starting new ones and when finished
+- **Never kill Claude Code shells**: Don't use KillBash unless absolutely necessary
+- **Check first**: Always check for existing Node processes
+- **No duplicates**: Never run multiple npm servers simultaneously
+
+**Anti-Patterns to Avoid:**
+- ❌ Starting npm processes without killing existing ones first
+- ❌ Leaving orphaned Node processes running
+- ❌ Running multiple dev servers simultaneously
+- ❌ Killing Claude Code bash shells unnecessarily
+- ❌ Not cleaning up Node processes when switching tasks
+
+**Process Management Checklist for Claude:**
+- [ ] Check for existing Node processes before starting new ones
+- [ ] Kill existing npm/node processes with pkill before starting
+- [ ] Never run duplicate development servers
+- [ ] Clean up Node processes when switching contexts
+- [ ] Only kill bash shells when absolutely necessary (use sparingly)
+
 ## Project Architecture
 
 This is a SuperBenefit DAO homepage built with Astro, designed for performance and Web3 readiness. The project follows specific architectural patterns:

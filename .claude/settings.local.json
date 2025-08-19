@@ -24,7 +24,14 @@
       "Bash(npx @biomejs/biome check:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm run preview:*)",
+      "Bash(pkill:*)",
+      "Bash(taskkill:*)",
+      "Bash(true)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": [],
