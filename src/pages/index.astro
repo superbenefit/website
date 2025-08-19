@@ -1,15 +1,29 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/layout/Header.astro";
+import Hero from "@/components/layout/Hero.astro";
+import MissionServices from "@/components/layout/MissionServices.astro";
+import DaoOverview from "@/components/layout/DaoOverview.astro";
+import LatestActivity from "@/components/content/LatestActivity.astro";
+import Community from "@/components/layout/Community.astro";
+import Footer from "@/components/layout/Footer.astro";
 ---
 
 <BaseLayout 
-  title="SuperBenefit DAO" 
-  description="A decentralized autonomous organization focused on creating positive impact through innovative blockchain solutions."
+  title="Fund and Build Regenerative Futures" 
+  description="Coordinate resources for social impact through transparent governance and community-validated funding mechanisms."
 >
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold text-center">SuperBenefit DAO</h1>
-    <p class="mt-4 text-center text-lg text-gray-600">
-      Building the future of decentralized impact
-    </p>
-  </div>
+  <Header slot="header" />
+  
+  <Hero />
+  
+  <MissionServices />
+  
+  <DaoOverview />
+  
+  <LatestActivity />
+  
+  <Community />
+  
+  <Footer />
 </BaseLayout>
