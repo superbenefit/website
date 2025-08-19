@@ -1,0 +1,241 @@
+---
+// Hero.astro - Main hero section for SuperBenefit homepage
+---
+
+<section class="hero-section relative overflow-hidden bg-gradient-to-br from-sb-cream via-sb-cream/90 to-sb-sage/10 dark:from-sb-charcoal dark:via-sb-charcoal/95 dark:to-sb-sage/20 h-[calc(100vh-8rem)] flex flex-col justify-center">
+  <!-- Background organic patterns -->
+  <div class="absolute inset-0 opacity-20 dark:opacity-10">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-sb-sage/30 rounded-full blur-xl animate-float"></div>
+    <div class="absolute top-40 right-20 w-24 h-24 bg-sb-orange/30 rounded-full blur-lg animate-float-delayed"></div>
+    <div class="absolute bottom-32 left-1/4 w-40 h-40 bg-sb-rust/20 rounded-full blur-2xl animate-float-slow"></div>
+  </div>
+
+  <div class="container mx-auto px-4 pt-8 pb-32 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Main headline -->
+      <h1 class="font-maple text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-sb-charcoal dark:text-sb-cream mb-6 leading-tight">
+        <span class="inline-block animate-fade-in-up">Fund and Build</span>
+        <br>
+        <span class="inline-block animate-fade-in-up animation-delay-200 bg-gradient-to-r from-sb-sage via-sb-orange to-sb-rust bg-clip-text text-transparent">
+          Regenerative Futures
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="font-source text-lg md:text-xl lg:text-2xl text-sb-charcoal/80 dark:text-sb-cream/80 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
+        Coordinate resources for social impact through transparent governance and community-validated funding mechanisms.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animation-delay-600">
+        <a 
+          href="/start-building" 
+          class="cta-primary group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-sb-sage hover:bg-sb-sage/90 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-sb-sage/20"
+        >
+          <span class="relative z-10">Start Building</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-sb-sage to-sb-orange opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300"></span>
+          <span class="ml-2 text-xl group-hover:translate-x-1 transition-transform duration-300">🌱</span>
+        </a>
+        
+        <a 
+          href="/vision" 
+          class="cta-secondary group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-sb-sage dark:text-sb-cream border-2 border-sb-sage dark:border-sb-cream hover:bg-sb-sage hover:text-white dark:hover:bg-sb-cream dark:hover:text-sb-charcoal rounded-lg transition-all duration-300 transform hover:scale-105"
+        >
+          Explore Vision
+          <span class="ml-2 text-xl group-hover:scale-125 transition-transform duration-300">🌿</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <button 
+    class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer bg-transparent border-none p-2 transition-transform duration-300 hover:scale-110"
+    aria-label="Scroll to next section"
+  >
+    <div class="w-6 h-10 border-2 border-sb-sage dark:border-sb-cream rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-sb-sage dark:bg-sb-cream rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </button>
+</section>
+
+<style>
+  /* Custom animations for organic feel */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+  
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-3deg); }
+  }
+  
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+  }
+  
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  .animate-float-slow {
+    animation: float-slow 10s ease-in-out infinite;
+    animation-delay: 4s;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+  
+  /* Gradient text support */
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  /* CTA button enhancements */
+  .cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+    border-radius: inherit;
+  }
+  
+  .cta-primary:hover::before {
+    transform: translateX(100%);
+  }
+  
+  /* Responsive typography scaling */
+  @media (max-width: 640px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+  }
+  
+  /* Dark mode enhancements */
+  @media (prefers-color-scheme: dark) {
+    .hero-section {
+      background-image: linear-gradient(to bottom right, 
+        var(--sb-charcoal), 
+        color-mix(in srgb, var(--sb-charcoal) 95%, transparent), 
+        color-mix(in srgb, var(--sb-sage) 20%, transparent)
+      );
+    }
+  }
+  
+  /* Accessibility enhancements */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-float-delayed,
+    .animate-float-slow,
+    .animate-bounce,
+    .animate-pulse {
+      animation: none;
+    }
+    
+    .animate-fade-in-up {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .hero-section {
+      background: var(--sb-cream);
+    }
+    
+    .dark .hero-section {
+      background: var(--sb-charcoal);
+    }
+    
+    .bg-gradient-to-r {
+      background: var(--sb-sage) !important;
+      -webkit-background-clip: unset !important;
+      background-clip: unset !important;
+      color: var(--sb-cream) !important;
+    }
+  }
+</style>
+
+<script>
+  // Scroll indicator functionality
+  function initScrollIndicator() {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', () => {
+        const heroSection = document.querySelector('.hero-section');
+        const header = document.querySelector('header');
+        
+        if (heroSection) {
+          // Calculate the position where hero bottom aligns with nav bottom
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const headerHeight = header ? header.offsetHeight : 0;
+          
+          // Scroll so that the bottom of nav aligns with bottom of hero
+          const scrollPosition = heroBottom - headerHeight;
+          
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollIndicator);
+  } else {
+    initScrollIndicator();
+  }
+</script>

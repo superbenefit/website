@@ -1,0 +1,165 @@
+---
+// Mission & Services Section Component
+// Displays the core mission statement and two main service areas
+// Uses SuperBenefit design system with organic visual treatments
+---
+
+<section class="relative py-20 bg-sb-cream dark:bg-sb-charcoal overflow-hidden">
+  <!-- Organic top divider -->
+  <div class="absolute top-0 left-0 w-full h-12 bg-white dark:bg-sb-charcoal/50">
+    <svg 
+      viewBox="0 0 1200 120" 
+      preserveAspectRatio="none" 
+      class="w-full h-full fill-sb-cream dark:fill-sb-charcoal"
+    >
+      <path d="M0,0 C300,80 500,20 800,60 C1000,90 1100,30 1200,50 L1200,120 L0,120 Z"/>
+    </svg>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Mission Statement -->
+    <div class="text-center mb-16">
+      <div class="inline-block mb-2">
+        <span class="font-source text-sm font-semibold tracking-wider text-sb-orange uppercase">
+          Our Mission
+        </span>
+      </div>
+      <h2 class="font-maple text-4xl sm:text-5xl lg:text-6xl font-semibold text-sb-charcoal dark:text-sb-cream mb-8 max-w-5xl mx-auto leading-tight">
+        Make Better Faster
+      </h2>
+      <p class="font-source text-lg md:text-xl text-sb-charcoal/80 dark:text-sb-cream/80 max-w-4xl mx-auto leading-relaxed">
+        We research and incubate initiatives that harness emerging technologies and practices in pursuit of systems transformation.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 mt-20">
+      
+      <!-- Service Area 1: Governance Infrastructure -->
+      <div class="group relative">
+        <!-- Decorative background element -->
+        <div class="absolute -inset-4 bg-gradient-to-br from-sb-sage/10 to-sb-orange/10 rounded-3xl transform -rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
+        
+        <div class="relative bg-white dark:bg-sb-charcoal/80 rounded-2xl p-8 lg:p-10 shadow-lg border border-sb-sage/20 dark:border-sb-sage/30">
+          <!-- Icon placeholder - Using geometric shape for now -->
+          <div class="w-16 h-16 bg-gradient-to-br from-sb-sage to-sb-orange rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+
+          <h3 class="font-maple text-2xl lg:text-3xl font-semibold text-sb-charcoal dark:text-sb-cream mb-4">
+            Governance That Scales
+          </h3>
+
+          <p class="font-source text-sb-charcoal/80 dark:text-sb-cream/80 text-lg mb-8 leading-relaxed">
+            From small working groups to large community decisions, our frameworks adapt to your needs.
+          </p>
+
+          <!-- Features List -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-sb-charcoal/70 dark:text-sb-cream/70">
+              <svg class="w-5 h-5 text-sb-sage mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-source">Proposal templates and workflows</span>
+            </li>
+            <li class="flex items-center text-sb-charcoal/70 dark:text-sb-cream/70">
+              <svg class="w-5 h-5 text-sb-sage mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-source">Multi-sig treasury management</span>
+            </li>
+            <li class="flex items-center text-sb-charcoal/70 dark:text-sb-cream/70">
+              <svg class="w-5 h-5 text-sb-sage mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-source">Role-based permissions with Hats Protocol</span>
+            </li>
+          </ul>
+
+          <!-- CTA -->
+          <a 
+            href="/governance" 
+            class="inline-flex items-center font-source font-semibold text-sb-sage hover:text-sb-orange transition-colors duration-200 group/link"
+          >
+            View Governance Docs
+            <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service Area 2: Knowledge Commons -->
+      <div class="group relative">
+        <!-- Decorative background element -->
+        <div class="absolute -inset-4 bg-gradient-to-br from-sb-orange/10 to-sb-rust/10 rounded-3xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
+        
+        <div class="relative bg-white dark:bg-sb-charcoal/80 rounded-2xl p-8 lg:p-10 shadow-lg border border-sb-orange/20 dark:border-sb-orange/30">
+          <!-- Icon placeholder -->
+          <div class="w-16 h-16 bg-gradient-to-br from-sb-orange to-sb-rust rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+
+          <h3 class="font-maple text-2xl lg:text-3xl font-semibold text-sb-charcoal dark:text-sb-cream mb-4">
+            Learn From What Works
+          </h3>
+
+          <p class="font-source text-sb-charcoal/80 dark:text-sb-cream/80 text-lg mb-8 leading-relaxed">
+            Access patterns, playbooks, and case studies from successful regenerative DAOs.
+          </p>
+
+          <!-- Features List -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-sb-charcoal/70 dark:text-sb-cream/70">
+              <svg class="w-5 h-5 text-sb-orange mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-source">Curated governance patterns</span>
+            </li>
+            <li class="flex items-center text-sb-charcoal/70 dark:text-sb-cream/70">
+              <svg class="w-5 h-5 text-sb-orange mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-source">Implementation guides</span>
+            </li>
+            <li class="flex items-center text-sb-charcoal/70 dark:text-sb-cream/70">
+              <svg class="w-5 h-5 text-sb-orange mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="font-source">Community-validated resources</span>
+            </li>
+          </ul>
+
+          <!-- CTA -->
+          <a 
+            href="https://knowledge.superbenefit.org" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center font-source font-semibold text-sb-orange hover:text-sb-rust transition-colors duration-200 group/link"
+          >
+            Explore Knowledge Garden
+            <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Organic bottom divider -->
+  <div class="absolute bottom-0 left-0 w-full h-12 bg-white dark:bg-sb-charcoal/50">
+    <svg 
+      viewBox="0 0 1200 120" 
+      preserveAspectRatio="none" 
+      class="w-full h-full fill-sb-cream dark:fill-sb-charcoal"
+    >
+      <path d="M0,70 C300,40 500,100 800,60 C1000,30 1100,90 1200,70 L1200,0 L0,0 Z"/>
+    </svg>
+  </div>
+</section>

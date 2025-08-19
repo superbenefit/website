@@ -1,0 +1,285 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/superbenefit-logo-cropped.png';
+
+export interface Props {
+  isSticky?: boolean;
+}
+
+const { isSticky = true } = Astro.props;
+---
+
+<>
+<header 
+  class:list={[
+    "relative bg-gradient-to-br from-sb-surface via-sb-cream to-sb-sage-pale",
+    "overflow-hidden",
+    { "sticky top-0 z-50": isSticky }
+  ]}
+>
+  <!-- Organic background pattern overlay -->
+  <div 
+    class="absolute inset-0 w-full h-full opacity-10 pointer-events-none organic-pattern"
+  ></div>
+
+  <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a 
+          href="/"
+          class="flex items-center transition-opacity duration-300 hover:opacity-80"
+          aria-label="SuperBenefit DAO - Home"
+        >
+          <Image 
+            src={logo}
+            alt="SuperBenefit DAO"
+            width={200}
+            height={60}
+            format="webp"
+            class="h-12 md:h-14 w-auto"
+            loading="eager"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a 
+            href="/"
+            class="px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium transition-colors duration-300"
+            aria-current="page"
+          >
+            Home
+          </a>
+          <a 
+            href="https://knowledge.superbenefit.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium transition-colors duration-300 flex items-center space-x-1"
+          >
+            <span>Knowledge Garden</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+          <a 
+            href="https://github.com/superbenefit/governance"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium transition-colors duration-300 flex items-center space-x-1"
+          >
+            <span>Governance</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+          <a 
+            href="/about"
+            class="px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium transition-colors duration-300"
+          >
+            About
+          </a>
+          <a 
+            href="/contribute"
+            class="px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium transition-colors duration-300"
+          >
+            Contribute
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA Button (Desktop) -->
+      <div class="hidden md:block">
+        <a 
+          href="#join"
+          class="inline-flex items-center px-6 py-3 text-white bg-sb-sage hover:bg-sb-sage-dark rounded-full font-semibold transition-all duration-300 hover:transform hover:translate-y-[-2px] hover:shadow-lg"
+        >
+          Start Building
+          <span class="ml-2 text-sm organic-growth-icon">🌿</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="mobile-menu-btn inline-flex items-center justify-center p-2 rounded-md text-sb-darkgray hover:text-sb-sage-dark hover:bg-sb-sage-pale focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sb-sage transition-colors duration-300"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close icon -->
+          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="md:hidden hidden mobile-menu" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-md rounded-lg shadow-lg border border-sb-border mt-2">
+        <a 
+          href="/"
+          class="block px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium rounded-md transition-colors duration-300"
+          aria-current="page"
+        >
+          Home
+        </a>
+        <a 
+          href="https://knowledge.superbenefit.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium rounded-md transition-colors duration-300"
+        >
+          Knowledge Garden ↗
+        </a>
+        <a 
+          href="https://github.com/superbenefit/governance"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium rounded-md transition-colors duration-300"
+        >
+          Governance ↗
+        </a>
+        <a 
+          href="/about"
+          class="block px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium rounded-md transition-colors duration-300"
+        >
+          About
+        </a>
+        <a 
+          href="/contribute"
+          class="block px-3 py-2 text-sb-darkgray hover:text-sb-sage-dark font-medium rounded-md transition-colors duration-300"
+        >
+          Contribute
+        </a>
+        <!-- Mobile CTA -->
+        <div class="pt-4 border-t border-sb-border">
+          <a 
+            href="#join"
+            class="flex items-center justify-center w-full px-4 py-3 text-white bg-sb-sage hover:bg-sb-sage-dark rounded-full font-semibold transition-all duration-300"
+          >
+            Start Building
+            <span class="ml-2 text-sm">🌿</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Organic section divider -->
+<div class="h-12 sm:h-16 bg-sb-cream relative overflow-hidden">
+  <svg 
+    viewBox="0 0 1200 120" 
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute bottom-0 w-full h-full"
+    preserveAspectRatio="none"
+  >
+    <path 
+      d="M0,0 C300,80 600,40 900,60 C1050,70 1150,80 1200,60 L1200,120 L0,120 Z" 
+      fill="#F5D5B3"
+      opacity="0.6"
+    />
+    <path 
+      d="M0,20 C300,100 600,60 900,80 C1050,90 1150,100 1200,80 L1200,120 L0,120 Z" 
+      fill="#7FA568"
+      opacity="0.1"
+    />
+  </svg>
+</div>
+
+<style>
+  /* Organic flow animation for background pattern */
+  @keyframes organic-flow {
+    0% { transform: translateX(-50%) translateY(-50%); }
+    100% { transform: translateX(0%) translateY(-25%); }
+  }
+
+  /* Organic pattern background */
+  .organic-pattern {
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50c25-10 25 10 50 0s25 10 50 0' stroke='%237FA568' fill='none'/%3E%3C/svg%3E");
+    animation: organic-flow 20s linear infinite;
+  }
+
+  /* Organic growth icon animation */
+  .organic-growth-icon {
+    display: inline-block;
+    transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .organic-growth-icon:hover {
+    animation: grow 600ms ease-out;
+  }
+
+  @keyframes grow {
+    0% { transform: scale(0) rotate(-180deg); }
+    50% { transform: scale(1.2) rotate(-90deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  /* Mobile menu interactivity will be handled by future React island */
+  .mobile-menu-btn:hover .organic-growth-icon {
+    transform: scale(1.1);
+  }
+
+  /* Ensure smooth transitions for all interactive elements */
+  a, button {
+    transition: all var(--transition-sb-base);
+  }
+
+  /* Hover effects for organic feel */
+  nav a:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Focus states for accessibility */
+  nav a:focus-visible {
+    outline: 2px solid var(--color-sb-sage);
+    outline-offset: 4px;
+    border-radius: var(--radius-sb-sm);
+  }
+
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<script>
+  // Simple mobile menu toggle - will be replaced with React island for enhanced interactivity
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburgerIcon = menuBtn?.querySelector('svg:nth-child(2)');
+    const closeIcon = menuBtn?.querySelector('svg:nth-child(3)');
+    
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        
+        menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+        mobileMenu.classList.toggle('hidden');
+        
+        if (hamburgerIcon && closeIcon) {
+          hamburgerIcon.classList.toggle('hidden');
+          hamburgerIcon.classList.toggle('block');
+          closeIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('block');
+        }
+      });
+    }
+  });
+</script>
+</>
