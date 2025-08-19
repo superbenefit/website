@@ -28,6 +28,15 @@ export default {
       screens: {
         'xs': '475px',
       },
+      
+      // Font family utilities
+      fontFamily: {
+        'header': 'var(--font-header)',
+        'body': 'var(--font-body)',
+        'maple': 'var(--font-maple)',
+        'source': 'var(--font-source)',
+        'mono': 'var(--font-mono)',
+      },
     },
   },
 }

@@ -44,6 +44,12 @@
   /* Override default font families to use SuperBenefit fonts */
   --font-sans: var(--font-sb-body);
   --font-mono: var(--font-sb-mono);
+  
+  /* Font family utilities for Tailwind */
+  --font-header: var(--font-sb-header);
+  --font-body: var(--font-sb-body);
+  --font-maple: var(--font-sb-display);
+  --font-source: var(--font-sb-body);
 
   /* Custom typography scale with sb prefix */
   --font-size-sb-xs: 0.75rem;    /* 12px */
@@ -99,14 +105,6 @@
 }
 
 /* Fonts are loaded via Google Fonts link in BaseLayout.astro */
-
-/* Base typography and body defaults */
-html {
-  font-family: var(--font-body);
-  line-height: 1.5;
-  color: var(--color-dark);
-  background-color: var(--color-surface);
-}
 
 /* Headings use header font */
 h1, h2, h3, h4, h5, h6 {
